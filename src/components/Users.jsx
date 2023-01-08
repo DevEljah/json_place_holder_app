@@ -39,16 +39,16 @@ function Users() {
     /////////////////////////////
     /////////////////////////////
 
-    axios.request(baseURL).then(function (res) {
+    /* axios.request(baseURL).then(function (res) {
       // request => get
       setUsers(res.data);
       console.log(res.data);
-    });
+    }); */
     /////////////////////////////
     /////////////////////////////
-    /* fetch(baseURL)
+    fetch(baseURL)
       .then((res) => res.json())
-      .then((data) => setUsers(data)); */
+      .then((data) => setUsers(data));
     /////////////////////////////
     /////////////////////////////
     /* fetch(baseURL)
