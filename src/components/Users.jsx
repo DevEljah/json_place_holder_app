@@ -67,14 +67,13 @@ function Users() {
       <h1>Json Place Holder</h1>
       {/*   <h1>{users.name}</h1>
       <p>{users.email}</p> */}
-
       <ul>
         {users.map((user) => (
           <li key={user.id}>
-            {user.name} | {user.email}
+            {user.name} || {user.email}
           </li>
         ))}
-      </ul>
+      </ul>{" "}
     </div>
   );
 }
