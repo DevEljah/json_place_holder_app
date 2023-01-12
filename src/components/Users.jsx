@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.css";
 
+import { fetchData, options } from "../utils/fetch";
+
 const baseURL = "https://jsonplaceholder.typicode.com/users";
 // const baseURL = "https://jsonplaceholder.typicode.com/users/1";
 
@@ -26,12 +28,16 @@ function Users() {
 
     getUsers(); */
     /////////////////////////////
+    axios.request(options).then(function (response) {
+      setUsers(response.data);
+      console.log(response.data);
+    });
     /////////////////////////////
-    const options = {
+    /* const options = {
       method: "GET",
       url: "https://jsonplaceholder30.p.rapidapi.com/users",
       headers: {
-        "X-RapidAPI-Key": "2e69d7ab27msh2b1ed5f886aadeep12ef8cjsnd2412a7fd097",
+        "X-RapidAPI-Key": process.env.REACT_APP_RAPID_API_KEY,
         "X-RapidAPI-Host": "jsonplaceholder30.p.rapidapi.com",
       },
     };
@@ -39,7 +45,7 @@ function Users() {
     axios.request(options).then(function (response) {
       setUsers(response.data);
       console.log(response.data);
-    });
+    }); */
     /////////////////////////////
     /////////////////////////////
     /* axios.request(baseURL).then(function (res) {
