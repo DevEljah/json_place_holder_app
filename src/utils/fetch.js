@@ -1,11 +1,11 @@
-import axios from "axios";
+/* import axios from "axios";
 
 const options = {
   method: "GET",
   url: "https://jsonplaceholder30.p.rapidapi.com/users",
   headers: {
-    "X-RapidAPI-Key": "2e69d7ab27msh2b1ed5f886aadeep12ef8cjsnd2412a7fd097",
-    "X-RapidAPI-Host": process.env.REACT_APP_API_KEY,
+    "X-RapidAPI-Key": process.env.REACT_APP_API_KEY,
+    "X-RapidAPI-Host": "jsonplaceholder30.p.rapidapi.com",
   },
 };
 
@@ -17,3 +17,4 @@ axios
   .catch(function (error) {
     console.error(error);
   });
+ */

@@ -9,6 +9,11 @@ function Users() {
   const [users, setUsers] = useState([]);
   const [posts, setPosts] = useState([]);
 
+  const handleDelete = (id) => {
+    setUsers(users.filter((user) => user.id !== id));
+    console.log("deleted");
+  };
+
   useEffect(() => {
     /////////////////////////////
     //// Mosh ////
@@ -20,15 +25,13 @@ function Users() {
     }
 
     getUsers(); */
-
     /////////////////////////////
     /////////////////////////////
-
     const options = {
       method: "GET",
       url: "https://jsonplaceholder30.p.rapidapi.com/users",
       headers: {
-        "X-RapidAPI-Key": process.env.REACT_APP_API_KEY,
+        "X-RapidAPI-Key": "2e69d7ab27msh2b1ed5f886aadeep12ef8cjsnd2412a7fd097",
         "X-RapidAPI-Host": "jsonplaceholder30.p.rapidapi.com",
       },
     };
@@ -39,7 +42,6 @@ function Users() {
     });
     /////////////////////////////
     /////////////////////////////
-
     /* axios.request(baseURL).then(function (res) {
       // request => get
       setUsers(res.data);
@@ -66,13 +68,13 @@ function Users() {
   return (
     <div>
       <h1>Json Place Holder</h1>
-
       <table className="table">
         <thead>
           <tr>
             <th scope="col">ID</th>
             <th scope="col">User Name</th>
             <th scope="col">Email</th>
+            <th scope="col">City</th>
             <th scope="col">Delete</th>
           </tr>
         </thead>
@@ -82,14 +84,21 @@ function Users() {
               <td scope="row"> {user.id} </td>
               <td> {user.username} </td>
               <td> {user.email} </td>
+              <td> {user.address.city} </td>
               <td>
-                <button>&nbsp; X &nbsp;</button>
+                <button
+                  onClick={() => handleDelete(user.id)}
+                  type="button"
+                  className="btn btn-danger"
+                >
+                  &nbsp; X &nbsp;
+                </button>
               </td>
             </tr>
           ))}
         </tbody>
       </table>
-      {/* {process.env.REACT_APP_API_TEST} */}
+      {/* <h1>{process.env.REACT_APP_CONTENT}</h1> */}
     </div>
   );
 }
