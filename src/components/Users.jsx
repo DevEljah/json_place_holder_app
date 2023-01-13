@@ -12,7 +12,7 @@ function Users() {
   const [posts, setPosts] = useState([]);
 
   const handleDelete = (id) => {
-    setUsers(users.filter((user) => user.id !== id));
+    setUsers(users.filter((item) => item.id !== id));
     console.log("deleted");
   };
 
@@ -74,6 +74,7 @@ function Users() {
   return (
     <div>
       <h1>Json Place Holder</h1>
+      <br />
       <table className="table">
         <thead>
           <tr>
