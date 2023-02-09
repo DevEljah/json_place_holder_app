@@ -105,7 +105,7 @@ function Users() {
           ))}
         </tbody>
       </table>
-      {/* <h1>{process.env.REACT_APP_CONTENT}</h1> */}
+      <h1>{process.env.REACT_APP_CONTENT}</h1>
     </div>
   );
 }
